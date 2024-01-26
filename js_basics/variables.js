@@ -13,6 +13,10 @@ accountCity = "Puri"
 
 console.table([accountId, accountName, accountType, accountCity, accountState])
 
+/**
+ * console.table([list of variables]) give the output in form of a table
+ */
+
 
 /**
     Prefer not to use var keyword as it has some issues with the block scope and functional scope
