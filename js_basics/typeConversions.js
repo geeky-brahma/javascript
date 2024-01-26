@@ -1,10 +1,10 @@
 let str = "123"
-console.log(typeof str);
-console.log(typeof(str));
+// console.log(typeof str);
+// console.log(typeof(str));
 
 let valueInNumber = Number(str)
-console.log(typeof valueInNumber);
-console.log(valueInNumber);
+// console.log(typeof valueInNumber);
+// console.log(valueInNumber);
 
 /**
  * "22" => 22
@@ -15,7 +15,7 @@ console.log(valueInNumber);
 
 let isLoggedIn = ""
 let booleanIsLoggedIn = Boolean(isLoggedIn)
-console.log(booleanIsLoggedIn);
+// console.log(booleanIsLoggedIn);
 
 /**
  * 1 => true; 0 => false
@@ -25,5 +25,21 @@ console.log(booleanIsLoggedIn);
 
 let someNumber = 123
 let stringOfNuber = String(someNumber)
-console.log(stringOfNuber);
-console.log(typeof stringOfNuber);
+// console.log(stringOfNuber);
+// console.log(typeof stringOfNuber);
+
+
+/********************************* Operations ********************************/
+
+let value = 2
+let negValue = -value
+// console.log(negValue);
+
+let str1 = "Brahma"
+let str2 = " Sahoo"
+// console.log(str1+str2);
+
+console.log("1" + 2);       // 12
+console.log(1 + "2");       // 12
+console.log("1" + 2 + 3);   // 123
+console.log(1 + 2 + "3");   // 33
