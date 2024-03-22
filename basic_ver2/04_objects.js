@@ -57,6 +57,9 @@ console.log(Object.entries(User));  // [ [ 'id', 101 ], [ 'name', 'Brahma' ], [ 
 console.log(User.hasOwnProperty("hello")); 
 console.log(User.hasOwnProperty("name")); 
 
+/**
+ * obj_var.hasOwnProperty("var") checks if the var is in keys or not.
+ */
 
 /**
  * ###################### OBJECT DESTRUCTURING ########################################
