@@ -1,0 +1,28 @@
+When we write console.log(window) in browser console we get to see a variety of parameters.
+One such parameter is document
+document.getElemetById(<id_of_tag>).innerHTML = 'Random Text'
+
+.getElemetById(<id_of_tag>) -> fetches a particular HTML element whose id is specified
+.innerHTML -> to change the text in that HTML tag
+
+DOM (Document Object Model) structure:
+
+         window
+           |
+           V
+        document
+            |
+            V
+           HTML
+          /     \
+         V       V
+      head       body
+      /  \         |
+     V    V        V
+    meta title    div
+                  /  \
+                 V    V
+                h1     p 
+
+
+
