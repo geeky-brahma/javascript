@@ -47,7 +47,12 @@ for (const key in arr) {
 
 // But we cant use for...in loop in maps as they are not iterable
 
-
+// ++++++++++++++++++++ forEach ++++++++++++++++++++++
+/**
+ * array.forEach(<callback-function>)
+ * forEach() takes a callback function as input and does some operation but does not return any value. Which seems the biggest drawback.
+ * The drawback wud be resolved by array.filter()
+ */
 const coding = ["js", "python", "cpp"];
 coding.forEach( function (item) {
     // console.log(item);   // js, python, cpp 
