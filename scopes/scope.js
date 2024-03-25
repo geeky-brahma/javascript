@@ -1,3 +1,5 @@
+// Scope
+
 /**
  * let : Block scope
  * const : Block scope
