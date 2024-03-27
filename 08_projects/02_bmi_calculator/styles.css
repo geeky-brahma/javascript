@@ -1,0 +1,7 @@
+body{
+    background-color: grey;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container{
+    align-items: center;
+}
