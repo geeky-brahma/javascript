@@ -10,3 +10,8 @@ setInterval(function(){
     date.innerHTML = `${date_time.toDateString()}`
 }, 1000);
 
+/**
+ * setInterval(function(){}, <interval>)
+ * this is used to run a particular code written inside the function after an specified interval continously.
+ * the interval is mentioned in 'ms'
+ */
