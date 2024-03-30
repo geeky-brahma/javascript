@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+            <li id="hello">Hello</li>
+        </ul>
+   </div>
+</body>
+<script>
+    // Not a good way to handle click events:
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked')
+    // }
+    
+   
+    /**
+     *  Topics to read more on:
+     * type, timestamp, preventDefault, defaultPrevented
+     * clientX, clientY, screenX, screenY -> Interview
+     * altkey, ctrlkey, shiftkey, keyCode
+    */
+    
+    // Basic Event Listener the right way:
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     alert("Owl is clicked!!")
+    // })
+    
+    // Propagation Types: Event Bubling and Event Capturing
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     alert("Owl is clicked!!")
+    // }, false)
+    /**
+     * The false at the end signifies Event Bubling:  This is the default behavior of event propagation in JavaScript. In event bubbling, the event first triggers on the innermost target element, and then successively triggers on the parents of the target element and continues till it reaches outermost DOM element.
+     * If its true then it signifies: Event Capturing: In event capturing, the event propagation happens in the opposite direction of event bubbling. In event capturing, the event first triggers on the outermost element, and then it propagates down to the inner elements, until it reaches the target element.
+    */
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("UL is clicked!!")
+    // }, false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("Owl is clicked!!")
+    // }, false)
+    // Here in the browser console 1st Owl is clicked then UL is clicked is shown -> Event Bubling
+    
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("UL is clicked!!")
+    // }, true)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("Owl is clicked!!")
+    // }, true)
+    // Here in the browser console 1st UL is clicked then Owl is clicked is shown -> Event Capturing
+    
+    // To stop this propagation: use .stopPropagation()
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("UL is clicked!!")
+    // }, false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     e.stopPropagation()
+    //     console.log("Owl is clicked!!")
+    // }, false)
+    
+
+    // To prevent the default behaviour of an element like stoping the redirect of a <a> tag i.e., on clicking the link it will not take to the site:     .preventDefault();
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        console.log('Google clicked');
+    })
+
+    document.querySelector('#images').addEventListener( 'click', function(e){
+        // console.log(e.target); // Gives the entire html element
+        // console.log(e.target.parentNode); // Gives the parent element of the current click
+        console.log(e.target.tagName); // Give the tagName of the current click
+
+        // Now lets Remove the element when we click on it
+        // let removeIt = e.target.parentNode
+        // removeIt.remove()  // New and popular method
+        // removeIt.parentNode.removeChild(removeIt)  // Same as the above line
+        // The above code has a problem as it works fine for images or links but for other list items it removes the entire list becoz for other list items e.target.parentNode is the <ul>
+
+        // To solve this just add few checks
+        if(e.target.tagName === 'IMG' || e.target.tagName === 'A'){
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        else{       // for Hello List item 
+            let removeIt = e.target
+            removeIt.remove()
+        }
+        
+        
+    })
+</script>
+</html>
